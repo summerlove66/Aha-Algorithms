@@ -1,0 +1,20 @@
+import random
+fake_qq= str(random.randint(10000 ,9999999999))# qq号码默认为5到10位
+print('加密的qq号码是:',fake_qq)
+def get_true_qq(x):
+    fake_qq_list =list(x)
+    true_qq_list=[]
+    while len(fake_qq_list)>=2:
+        # 删除第一位
+        a=fake_qq_list.pop(0)
+        true_qq_list.append(a)
+        #将第二位移到末尾 注意因为第一位已经pop 掉了 所以这里索引任然为0
+        b =fake_qq_list.pop(0)
+        fake_qq_list.append(b)
+
+
+    true_qq_list.append(fake_qq_list[0])
+    print('真实的qq号码是:' ,''.join(true_qq_list))
+
+get_true_qq(fake_qq)
+
