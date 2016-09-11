@@ -1,0 +1,29 @@
+import random
+a = random.sample(list(range(100)),35)
+
+
+
+def quicksort(left,right):
+    global a
+    if left>right:
+        return
+    temp = a[left]
+    i =left
+    j =right
+
+
+    while i !=j:
+        while a[j] >temp and i< j:
+            j -=1
+        while a[i]<temp and i<j:
+            i +=1
+        if i<j:
+            a[i],a[j] =a[j],a[i]
+
+    temp,a[i] =a[i],temp  #基数归位
+    quicksort(left,i-1)
+    quicksort(i+1,right)
+
+
+quicksort(0,34)
+print(a)
