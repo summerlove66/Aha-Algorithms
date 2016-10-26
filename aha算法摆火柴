@@ -1,0 +1,27 @@
+
+def get_it(n):
+
+    huocai =[6, 2, 5, 5, 4, 5, 6, 3, 7, 6]
+    num_list =list(str(n))
+
+    return sum([huocai[int(i)] for i in num_list])
+
+
+
+
+
+def get_num(m):
+
+    loop_n =((m-4)//4)
+    max_num = int('1'*loop_n)
+
+    for i in range(max_num):
+        for j in range(max_num):
+
+           if i !=j and  get_it(i) + get_it(j) + get_it(i+j) == m-4:
+               print('{}+{}={}'.format(i, j, i + j))
+
+
+
+
+get_num(20)
